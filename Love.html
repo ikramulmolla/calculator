@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('love.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        header{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+        .card{
+            width: 749px;
+        }
+        .paragraph{
+            margin-top: -36px;
+            margin-left: -80%;
+            font-size: 14px;
+        }
+        @media (min-width: 360px) and (max-width: 767.98px) {
+           .card{
+                 width: 341px;
+            }
+            span{
+                margin-left: 76px;
+            }
+            .card-footer{
+                font-size: 16px;
+                margin-left: -7px;
+            }
+            .paragraph{
+                margin-top: 14px;
+                margin-left: -64%;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="card m-auto text-center">
+            <div class="card-header bg-danger text-white">Love Calculater</div>
+            <div class="card-body">
+                <form class="form-inline w-75 m-auto">
+                    <div class="form-group">
+                        <input type="text" name="" class="form-control text-center" placeholder="Your Name" id="name">
+                    </div>
+                    <div><span class="pl-4 pr-4">+</span></div>
+                    <div class="form-group">
+                        <input type="text" name="" class="form-control text-center" placeholder="Your Partner Name" id="lname">
+                    </div>
+                </form><br>
+                <div class="w-75 m-auto">
+                    <button class="btn btn-success w-50" onclick="checklove()">Click</button>
+                </div>
+                <div><br>
+                    <input type="text" name="" id="lovevalue" class="form-control text-center w-25 m-auto pla" placeholder="Love%">
+                </div>
+            </div>
+            <div class="card-footer">God bless your relationship</div>
+            <p class="paragraph">Created By Ikramul</p>
+        </div>
+    </header>
+
+    <script>
+        function checklove(){
+                 
+            var name = document.getElementById('name').value;
+            var lname = document.getElementById('lname').value;
+            
+            if(name == ""){
+                alert('Please enter your name')
+            }else if(name.length <=2){
+                alert('Minimum 3 letters')
+            }else if(!isNaN(name)){
+               alert('Number are not allowed')
+            }
+
+              else if(lname == ""){
+                alert('Please enter your partner name')
+            }else if(lname.length <=2){
+                alert('Minimum 3 letters')
+            }else if(!isNaN(lname)){
+               alert('Number are not allowed')
+            }
+            else{
+                var lovedata = Math.random() * 100;
+            lovedata = Math.floor(lovedata);
+           document.getElementById('lovevalue').value = lovedata + "%";
+            }   
+        }
+    </script>
+</body>
+
+</html>
